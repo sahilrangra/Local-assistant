@@ -47,17 +47,17 @@ def processCommand(c):
         speak("I didn't understand that command.")
 
 if __name__ == "__main__":
-    speak("Your Khushi at your command...")
+    speak("Your Alexa at your command...")
     while True:
         try:
             print("Listening for the wake word...")
             with sr.Microphone() as source:
                 audio = recognizer.listen(source, timeout=5, phrase_time_limit=3)
             word = recognizer.recognize_google(audio)
-            if word.lower() == "khushi":
+            if word.lower() == "alexa":
                 speak("Ya")
                 with sr.Microphone() as source:
-                    print("Khushi is active. Listening for your command...")
+                    print("Alexa is active. Listening for your command...")
                     audio = recognizer.listen(source)
                     command = recognizer.recognize_google(audio)
                     print(f"Recognized command: {command}")
